@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Spend Policy Setup Assistant</title>
+<meta name="description" content="Reads a messy spend policy, proposes rules, asks a person the questions only a person can answer, and exports a reviewed, tested rule set. Fictional data; runs in sample mode with no key.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Spend Policy Setup Assistant">
+<meta property="og:description" content="Reads a messy spend policy, proposes rules, asks a person the questions only a person can answer, and exports a reviewed, tested rule set. Fictional data; runs in sample mode with no key.">
+<meta property="og:url" content="https://karishma0502-pixel.github.io/my-capstone/">
+<meta property="og:image" content="https://karishma0502-pixel.github.io/my-capstone/docs/images/preview.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 /* PF-DESIGN-START
    The look ships in the kit. Product Faculty capstone design tokens and parts.
@@ -243,6 +250,7 @@ details.source p { margin: var(--sp-1) 0 0; padding-left: var(--sp-3); border-le
     <button type="button" class="tab" data-view="evals" aria-pressed="false">Evals</button>
   </nav>
   <span class="meta" id="product-note">HarbourWorks is a fictional company. Every person, policy, email, record and amount here is made up.</span>
+  <span class="meta" id="key-note">Sample mode needs no key. Real AI runs on your own Claude API key and your account pays for it, so use a separate key with a low spending limit. The key stays in this tab's memory and goes only to Anthropic.</span>
 </header>
 
 <main class="page" id="view-guided">
@@ -2761,6 +2769,7 @@ var OWN = { id: 'OWN', title: 'Your own policy', own: true, label: 'Your own pol
   $('evals-head').textContent = counted + ' cases, judged by a person';
   $('imp-before').value = RECORDED.improvement.before; $('imp-change').value = RECORDED.improvement.change; $('imp-after').value = RECORDED.improvement.after;
   LIMITS.forEach(function (limit) { $('limits').appendChild(el('li', '', limit)); });
+  PFAI.onChange(function (s) { $('key-note').hidden = s.mode === 'hosted' || s.connected; });
   renderCases(); renderLog(); renderEvals(); renderWizard();
 })();
 </script>
