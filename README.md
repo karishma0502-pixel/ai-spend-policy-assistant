@@ -1,6 +1,6 @@
 # AI Spend Policy Setup Assistant
 
-**[Try the live demo](https://karishma0502-pixel.github.io/my-capstone/)**: it opens in a labelled sample mode, with no key or sign-up.
+**[Try the live demo](https://karishma0502-pixel.github.io/ai-spend-policy-assistant/)**: it opens in a labelled sample mode, with no key or sign-up.
 
 Turns an ambiguous expense policy into a reviewed, tested set of approval rules. The AI proposes, code checks, and a person decides.
 
@@ -37,7 +37,7 @@ The cases cover routing, the exact NZ$2,000 boundary, split purchases, ambiguity
 
 ## Run it
 
-Use the [live demo](https://karishma0502-pixel.github.io/my-capstone/), or open `index.html` in a browser. There is no build step.
+Use the [live demo](https://karishma0502-pixel.github.io/ai-spend-policy-assistant/), or open `index.html` in a browser. There is no build step.
 
 Sample mode needs no key. Real AI needs your own Claude API key, and your account pays for what you run, so use a separate key with a low spending limit. The key is held in memory for that tab, sent only to Anthropic, and never stored in this repo.
 
