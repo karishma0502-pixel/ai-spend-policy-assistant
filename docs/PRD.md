@@ -318,6 +318,7 @@ This second change was made after the recorded results, so the 28 October result
 - Expected results come from a fixed answer key that follows the scripted CFO decision. A different recorded decision shows up as a difference.
 - A user's own policy stops at the rules, the issue list and the export of those. Drafting, scenario tests and the settings export work on built-in cases only.
 - Quotes from a PDF cannot be checked against the source; a text copy is needed for that.
+- It reads up to 12 rules and 10 questions per run.
 - Everything lives in memory for the visit. Nothing is saved.
 - There has been no pilot with Finance Managers, so real-world usefulness and time savings are unvalidated. Live configuration, stakeholder messaging, card issuance and money movement are out of scope.
 
@@ -385,7 +386,8 @@ The smallest safe path is a scenario-based capstone evaluation on a public demo 
 
 *How will your video cover intro, problem, discovery, solution demo, eval rigor, impact, and launch plan?*
 
-The video will run four minutes, with most of the time on the working demo and evaluation evidence:
+The recorded demo video runs 3:36: https://www.loom.com/share/08eb69d91637477d9151d52dece56ac9
+The outline I planned it around:
 - 0:00-0:15: Introduce the product and the Finance Manager it serves.
 - 0:15-0:45: Show one ambiguous policy rule and explain the manual clarification and configuration work it creates.
 - 0:45-1:10: Explain the discovery hypothesis and limits: synthetic data, no Finance Manager pilot, and unvalidated real-world savings.
@@ -406,17 +408,15 @@ Yes. Every grading-critical decision is written directly in this sheet, and no l
 
 *Can a reviewer understand the working prototype loop from the PRD and video?*
 
-Yes. The written workflow matches the working page, and the video will show the same sequence on screen:
-1. Open the built-in example with the conference policy, conflicting email and approver list.
-2. Review the agent's source-linked rules, unresolved questions and blocked export.
-3. Enter a scripted authorised CFO decision resolving the threshold and approval sequence.
-4. Review, edit or reject the resulting configuration draft and its supporting evidence.
-5. Run deterministic scenarios and compare expected with actual outcomes. Edits invalidate outdated approval and test evidence, so affected checks run again.
-6. Approve and export the latest mock specification only after material issues are resolved and required tests pass.
+Yes. The written workflow matches the working page, and the video demonstrates the same flow:
+1. Upload: the user uploads or pastes their spend policy and related documents, such as emails, an authority table, working notes and an HR export.
+2. Read: the AI reads all the documents together. It extracts every rule with the exact quote and source, and raises questions where documents conflict, are silent, or ask for something the platform cannot do. It decides nothing.
+3. Check in code: plain code verifies that every quote exists in the source text, checks the HR file for missing, self-approving or looping approvers, and flags any rule the AI did not ask about, which the user can add as a question with one click.
+4. Decide: each question goes to the role allowed to answer it, for example the CFO. The user picks the role and source document and writes the decision. The page checks that the role has authority and stores the decision next to its source.
+5. Review and export: the finish screen shows every rule with its quote and source, every decision with who made it, and the checks. The user downloads a reviewed rule set as JSON, CSV or clean text. Unresolved items are held back, not guessed.
 
 ### Four-minute story
 
 *Does the 4-minute video show the product clearly, concisely, and persuasively?*
 
-Not yet. I have not recorded or reviewed the video, so I cannot confirm its clarity or persuasiveness. It will follow the four-minute structure in the video outline row above.
-Before submission, I will check that the recording stays within four minutes, the key screens are readable, and narration explains what each action accomplishes.
+The video is recorded and runs 3:36, within the four-minute limit: https://www.loom.com/share/08eb69d91637477d9151d52dece56ac9

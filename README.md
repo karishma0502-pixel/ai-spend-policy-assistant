@@ -4,7 +4,9 @@
 
 Turns an ambiguous expense policy into a reviewed, tested set of approval rules. The AI proposes, code checks, and a person decides.
 
-![The assistant's start screen, offering your own documents or a built-in example](docs/images/guided.png)
+**[Watch the 3:36 walkthrough](https://www.loom.com/share/08eb69d91637477d9151d52dece56ac9)**
+
+[![Video walkthrough of the assistant](https://cdn.loom.com/sessions/thumbnails/08eb69d91637477d9151d52dece56ac9-62dc0bbf276ddbbd.gif)](https://www.loom.com/share/08eb69d91637477d9151d52dece56ac9)
 
 ## The problem
 
@@ -12,16 +14,13 @@ A company's written expense policy rarely holds every decision a spend platform 
 
 ## How it works
 
-| Step | Who does it | What happens |
-|---|---|---|
-| Read | AI | Extracts rules from the documents, quoting the source for each one |
-| Ask | AI | Raises gaps and conflicts as focused questions, naming who must answer |
-| Decide | A person | Records the answer. An answer from a role without authority is not accepted |
-| Check | Code | Calculates trip totals and routes, and checks approvers, receipts and quotes |
-| Approve | A person | Approves the exact draft version. Any later edit withdraws that approval |
-| Export | Code | Stays blocked until issues are resolved and tests match the latest draft |
+1. **Upload.** You upload or paste your spend policy and related documents, such as emails, an authority table, working notes and an HR export.
+2. **Read.** The AI reads all the documents together. It extracts every rule with the exact quote and source, and raises questions where documents conflict, are silent, or ask for something the platform can't do. It decides nothing.
+3. **Check in code.** Plain code, not AI, verifies that every quote exists in the source text, checks the HR file for missing, self-approving or looping approvers, and flags any rule the AI didn't ask about. You can add that rule as a question with one click.
+4. **Decide.** Each question goes to the role allowed to answer it, for example the CFO. You pick the role and source document and write the decision. The page checks that the role has authority and stores the decision next to its source.
+5. **Review and export.** The finish screen shows every rule with its quote and source, every decision with who made it, and the checks. You download a reviewed rule set as JSON, CSV or clean text. Unresolved items are held back, not guessed.
 
-Nothing is applied to a live platform, no stakeholder is contacted, and no money moves. The prototype stops at a downloadable mock specification and review report.
+The built-in examples go further, using a fictional company: they draft the settings, test them on example trips, and require a person's approval before export. Nothing is applied to a live platform, no stakeholder is contacted, and no money moves.
 
 ## Evaluation
 
@@ -43,10 +42,12 @@ Sample mode needs no key. Real AI needs your own Claude API key, and your accoun
 
 ## Limits
 
-- It covers one fictional company and one conference policy, and isn't connected to a real spend platform.
+- AI results vary between runs, and it reads up to 12 rules and 10 questions per run.
+- The built-in examples cover one fictional company and one conference policy. Nothing is connected to a real spend platform.
 - The CFO's answers are scripted. The page checks a chosen role against a fixed map and doesn't verify anyone's identity.
 - Your own documents stop at rules, questions and an export of those. Drafting and scenario tests work on the built-in cases only.
 - Quotes from a PDF can't be checked against the source, so use a `.txt` copy for that.
+- The HR check needs a CSV or TSV file with ID and manager columns.
 - Nothing is saved between visits.
 
 All companies, people and amounts are fictional.
