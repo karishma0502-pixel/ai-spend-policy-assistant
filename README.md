@@ -53,7 +53,7 @@ All companies, people and amounts are fictional.
 
 ## Documents
 
-- [Product requirements](docs/PRD.md) ([original spreadsheet](docs/capstone-prd.xlsx))
+- [Product requirements](docs/PRD.md)
 
 ## Credits
 

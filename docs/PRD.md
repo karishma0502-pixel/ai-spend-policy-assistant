@@ -4,7 +4,7 @@
 **Workflow:** Expense-policy setup: turning an ambiguous conference-expense policy into a reviewed, tested spend-platform configuration specification, with authorised people resolving every policy question.  
 **Date:** 2026-11-01
 
-Readable copy of [capstone-prd.xlsx](capstone-prd.xlsx), the course version. Written for the Product Faculty Agentic AI capstone, using its PRD template. All companies, people and amounts are fictional.
+Written for the Product Faculty Agentic AI capstone, using its PRD template. All companies, people and amounts are fictional.
 
 ## Discovery
 
